@@ -10,5 +10,6 @@ const usersController = new UsersController()
 
 usersRouters.post("/", usersController.create)
 usersRouters.put("/", ensureAuthenticated, usersController.update)
+usersRouters.get("/", ensureAuthenticated, usersController.viewAll)
 
 module.exports = usersRouters

@@ -65,6 +65,15 @@ class UsersController {
     return res.json()
   }
 
+  async viewAll(req, res) {
+    const database = await sqliteConnection()
+
+   const users = await database.all(`
+    select * from users` )
+
+
+    return res.json(users)
+  }
   
 }
 module.exports = UsersController
